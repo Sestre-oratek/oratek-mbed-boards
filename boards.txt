@@ -1,0 +1,42 @@
+
+
+soya-b.name=Oratek SOYA-B
+soya-b.build.core=arduino
+soya-b.build.crossprefix=arm-none-eabi-
+soya-b.build.compiler_path={runtime.tools.arm-none-eabi-gcc.path}/bin/
+
+soya-b.build.variant=soya-b
+soya-b.build.mcu=cortex-m4
+soya-b.build.extra_flags=
+soya-b.build.architecture=cortex-m4
+soya-b.build.fpu=fpv4-sp-d16
+soya-b.build.float-abi=softfp
+soya-b.build.board=ORATEK_SOYA-B
+soya-b.build.ldscript=linker_script.ld
+soya-b.compiler.mbed.arch.define=-DARDUINO_ARCH_NRF52840
+soya-b.compiler.mbed.defines={build.variant.path}/defines.txt
+soya-b.compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+soya-b.compiler.mbed.cflags={build.variant.path}/cflags.txt
+soya-b.compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+soya-b.compiler.mbed.includes={build.variant.path}/includes.txt
+soya-b.compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+soya-b.compiler.mbed="{build.variant.path}/libs/libmbed.a" "{build.variant.path}/libs/libcc_310_core.a" "{build.variant.path}/libs/libcc_310_ext.a" "{build.variant.path}/libs/libcc_310_trng.a"
+soya-b.vid.0=0x2341
+soya-b.pid.0=0x005a
+soya-b.vid.1=0x2341
+soya-b.pid.1=0x805a
+
+soya-b.upload.tool=bossac
+soya-b.upload.protocol=
+soya-b.upload.use_1200bps_touch=true
+soya-b.upload.wait_for_upload_port=true
+soya-b.upload.native_usb=true
+soya-b.upload.maximum_size=983040
+soya-b.upload.maximum_data_size=262144
+
+soya-b.bootloader.tool=openocd
+soya-b.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
+soya-b.bootloader.config=-f target/nrf52.cfg
+soya-b.bootloader.programmer=-f interface/cmsis-dap.cfg
+soya-b.bootloader.file=soya-b/bootloader.hex
+
