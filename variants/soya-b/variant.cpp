@@ -121,7 +121,7 @@ PinDescription g_APinDescription[] = {
   { P0_28, NULL, NULL, NULL },    // D30 - I2C_PULL
   { P0_26, NULL, NULL, NULL },    // D31 - TP3 - SCL2
   { P0_6,  NULL, NULL, NULL },    // D32 - TP4 - SDA2
-  { P1_22, NULL, NULL, NULL },    // D33 - TP5
+  { P0_22, NULL, NULL, NULL },    // D33 - TP5
   { P0_20, NULL, NULL, NULL },    // D34 - TP6
   { P0_17, NULL, NULL, NULL },    // D35 - TP7
   { P0_19, NULL, NULL, NULL },    // D36 - TP8

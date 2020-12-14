@@ -56,4 +56,9 @@ You can use this core as a standard mbed library; all APIs are under `arduino` n
 
 The opposite is working as well; from any sketch you can call mbed APIs by prepending `mbed::` namespace.
 
+## Flash bootload 
+http://djynet.net/?p=969
+
+Don't forget to supply the uC even if the programer is connected
+
 

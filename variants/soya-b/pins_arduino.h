@@ -102,10 +102,10 @@ static const uint8_t A7  = PIN_A7;
 #define SCL   15
 #define SDA   16
 #define CS1   17
-#define CS2   18
+#define CS2   18/*
 #define SCK   19
 #define MOSI  20
-#define MISO  21
+#define MISO  21*/
 #define I2C_PULL 30
 #define SCL2  31
 #define SDA2  32
