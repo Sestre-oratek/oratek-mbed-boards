@@ -34,7 +34,7 @@ sleep 1
 
 echo ""
 echo "----- Download repo archive -----"
-curl "https://codeload.github.com/Sestre-oratek/oratek-mbed-boards/zip/$VERSIONNUMBER" >> oratek-mbed-boards.zip
+curl "https://codeload.github.com/oratek-ch/oratek-mbed-boards/zip/$VERSIONNUMBER" >> oratek-mbed-boards.zip
 
 echo ""
 echo "----- Calculate size and checksum -----"
@@ -45,8 +45,8 @@ echo "sum = ${SUM}"
 
 echo ""
 echo "----- Add new version to the json file -----"
-cd jsonFiles
-jq .version="\"$VERSIONNUMBER\"" mbedTemplate.json | jq .size="\"${SIZE}\"" | jq .checksum="\"SHA-256:${SUM}\"" | jq .archiveFileName="\"oratek-mbed-boards-$VERSIONNUMBER.zip\"" | jq .url="\"https://github.com/Sestre-oratek/oratek-mbed-boards/archive/$VERSIONNUMBER.zip\"" >> temp.json
+cd arduino-boards-manager
+jq .version="\"$VERSIONNUMBER\"" mbedTemplate.json | jq .size="\"${SIZE}\"" | jq .checksum="\"SHA-256:${SUM}\"" | jq .archiveFileName="\"oratek-mbed-boards-$VERSIONNUMBER.zip\"" | jq .url="\"https://github.com/oratek-ch/oratek-mbed-boards/archive/$VERSIONNUMBER.zip\"" >> temp.json
 jq --argjson newVersion "$(<temp.json)" '.packages[0].platforms += [$newVersion]' package_oratek_index.json >> final.json
 rm temp.json
 rm package_oratek_index.json
